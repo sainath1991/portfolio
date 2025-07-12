@@ -8,9 +8,9 @@ export default function BLogDetails() {
       <div class="px-40">
         <h2 class="text-3xl font-medium py-2">{data.title}</h2>
         <p class="py-2"><Localizer date={ data.createdAt }/></p>
-        <p>{data.description}</p>
-        <div>
-          <Link to={'/blog'}>Back</Link>
+        <p class="py-2">{data.description}</p>
+        <div class="py-2">
+          <Link class="border-1 rounded-lg border-black p-2 hover:bg-gray-400" to={'/blog'}>Back</Link>
         </div>
       </div>
     </>
