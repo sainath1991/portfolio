@@ -3,6 +3,7 @@ import ContactUs from "./pages/ContactUs";
 import Home from "./pages/Home";
 import RootLayout from "./pages/RootLayout";
 import Blog, { blogsLoader } from "./pages/Blog";
+import BLogDetails, { getBlogDetails } from "./pages/BlogDetails";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,18 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog',
-        element: <Blog />,
-        loader: blogsLoader
+        children: [
+          {
+            index: true,
+            element: <Blog />,
+            loader: blogsLoader,
+          },
+          {
+            path: ':id',
+            element: <BLogDetails />,
+            loader: getBlogDetails,
+          }
+        ]
       },
       {
         path: '/contact-us',

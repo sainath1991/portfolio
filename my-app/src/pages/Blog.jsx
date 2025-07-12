@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import Footer from "../components/Footer";
 import Localizer from "../components/Localizer";
 
@@ -10,7 +10,7 @@ export default function Blog() {
       <div className="flex flex-col mx-40">
         { data.map( (item, index) => (
           <div key={item.id}>
-            <div className="font-semibold text-2xl">{item.title}</div>
+            <div className="font-semibold text-2xl"><Link to={`${item.id}`}>{item.title}</Link></div>
             <div className="mt-2">
               <Localizer date={item.createdAt} />
               {/* <span>12 Feb 2019</span> */}
