@@ -15,5 +15,5 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: cd my-app && pwd && ls
       - run: node -v
-      - run: npm install
+      - run: pwd && npm install
       - run: npm test
